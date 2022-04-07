@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <form action="{% url 'buy_car' buy_car.id %}" method="POST">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td>Car Seller</td>
+                    <td>{{ buy_car.owner }}</td>
+                </tr>
+                <tr>
+                    <td>Seller Mobile</td>
+                    <td>{{ buy_car.mobile }}</td>
+                </tr>
+                <tr>
+                    <td>Car Model</td>
+                    <td>{{ buy_car.car_model }}</td>
+                </tr>
+                <tr>
+                    <td>Make</td>
+                    <td>{{ buy_car.make }}</td>
+                </tr>
+                <tr>
+                    <td>Car Confition</td>
+                    <td>{{ buy_car.condition }}</td>
+                </tr>
+                <tr>
+                    <td>Model Year</td>
+                    <td>{{ buy_car.year }}</td>
+                </tr>
+                <tr>
+                    <td>Asking Price</td>
+                    <td>{{ buy_car.price }}</td>
+                </tr>
+                <tr>
+                    <td>Buyer Name</td>
+                    <td>{{ form_data.name }}</td>
+                </tr>
+                <tr>
+                    <td>Buyer Mobile</td>
+                    <td>{{ form_data.mobile }}</td>
+                </tr>
+                <tr>
+                    <td>
+                    <td><button>Submit</button></td>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </form>
+</div>
+
+{% endblock %}
